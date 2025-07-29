@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'MedievalSharp', cursive;
+  background: url('https://i.imgur.com/OQOZrAf.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff3c7;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.cta {
+  text-decoration: none;
+  background: rgba(255, 243, 199, 0.1);
+  border: 2px solid #fff3c7;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff3c7;
+  font-size: 1.2em;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: rgba(255, 243, 199, 0.3);
+  transform: scale(1.05);
+}
+
+/* Footsteps Animation */
+.footsteps {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 100px;
+}
+
+.step {
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  background: url('https://i.imgur.com/xzkqD0U.png') no-repeat center/contain;
+  animation: walk 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+  opacity: 0;
+}
+
+@keyframes walk {
+  0% {
+    transform: translateX(0) translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--i) * 30px)) translateY(calc(var(--i) * -30px)) scale(1);
+    opacity: 0;
+  }
+}
